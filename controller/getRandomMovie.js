@@ -1,0 +1,1 @@
+const getRandomMovie = (req, res) => {};
