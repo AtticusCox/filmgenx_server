@@ -12,7 +12,24 @@ const getRandomID = () => {
   getRandomID();
 };
 
+const readWatchList = () => {
+  const fileContent = fs.readFileSync("./data/watchList.json");
+  return JSON.parse(fileContent);
+};
+
+const writeWatchList = (myData) => {
+  fs.writeFileSync("./data/watchList.json", JSON.stringify(myData));
+};
+
+const readReviewList = () => {
+  const fileContent = fs.readFileSync("./data/reviews.json");
+  return JSON.parse(fileContent);
+};
+
 module.exports = {
   getRandomID,
   readTempMovie,
+  readWatchList,
+  writeWatchList,
+  readReviewList,
 };

@@ -14,6 +14,23 @@ router.get("/random", (req, res) => {
   res.status(200).json(movies[randomNumber]);
 });
 
+// router.get("/watchlist", (req, res) => {
+//   const movies = helpers.readWatchList();
+//   res.status(200).json(movies);
+// });
+
+// router.post("/watchlist", (req, res) => {
+//   const newMovie = req.body;
+//   const movies = helpers.readWatchList();
+//   console.log(req.body);
+//   movies.push(newMovie);
+
+//   fs.writeFileSync("./data/watchList.json", JSON.stringify(movies));
+//   res.status(201).json(newMovie);
+// });
+
+router.post("/movies/:id");
+
 const fileContent = fs.readFileSync("./data/tempmovie.json");
 
 const array = JSON.parse(fileContent);

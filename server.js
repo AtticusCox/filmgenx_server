@@ -1,4 +1,6 @@
 const movieRoutes = require("./routes/movieRoutes");
+const watchListRoutes = require("./routes/watchListRoutes");
+const reviewRoutes = require("./routes/reviewRoutes");
 const express = require("express");
 const app = express();
 app.use(express.json());
@@ -17,6 +19,8 @@ app.use(express.json());
 // console.log(API_KEY);
 
 app.use("/", movieRoutes);
+app.use("/", watchListRoutes);
+app.use("/", reviewRoutes);
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
